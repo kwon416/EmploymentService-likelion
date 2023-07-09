@@ -1,0 +1,2 @@
+### api 테스트
+GET {{host}}/api/sample

@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://svc.sel4.cloudtype.app:31975/EmploymentService?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true #To beautify or pretty print the SQL
+        show_sql: true #show sql
+        dialect: org.hibernate.dialect.MariaDBDialect
+    show-sql: true
+    generate-ddl: false
+    database-platform: org.hibernate.dialect.MariaDBDialect
+  mvc:
+    view:
+      prefix: .html
+    hiddenmethod:
+      filter:
+        enabled: true
+    static-path-pattern: /resources/**
+
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+
+logging:
+  level:
+    org.hibernate:
+      type.descriptor.sql: trace #show parameter binding
+      SQL: DEBUG
