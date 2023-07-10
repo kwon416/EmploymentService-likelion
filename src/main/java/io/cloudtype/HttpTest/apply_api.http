@@ -1,0 +1,50 @@
+### 자소서 목록 조회
+GET {{host}}/api/apply
+Accept: application/json
+Content-Type: application/json
+
+### 자소서 아이디로 조회
+GET {{host}}/api/apply/
+Accept: application/json
+Content-Type: application/json
+
+
+
+### 자소서 저장
+POST {{host}}/api/apply
+Accept: application/json
+Content-Type: application/json
+
+{
+  "employId": 1,
+  "name": "name",
+  "gender": "남",
+  "birth": "yyyymmdd",
+  "phoneNo": "phoneNo",
+  "residence": "res",
+  "careerYn": "Y",
+  "content1": "content1수정",
+  "content2": "content2",
+  "content3": "content3",
+  "content4": "content4"
+}
+
+### 자소서 수정
+POST {{host}}/api/apply/update
+Accept: application/json
+Content-Type: application/json
+
+{
+  "applyId": 5,
+  "employId": 3,
+  "name": "name",
+  "gender": "남",
+  "birth": "yyyymmdd",
+  "phoneNo": "phoneNo",
+  "residence": "res",
+  "careerYn": "Y",
+  "content1": "id 5 수정",
+  "content2": "content2",
+  "content3": "content3",
+  "content4": "content4"
+}
