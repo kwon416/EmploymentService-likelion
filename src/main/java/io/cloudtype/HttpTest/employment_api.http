@@ -1,0 +1,9 @@
+### 전체 공고 조회
+GET {{host}}/api/employment
+Accept: application/json
+Content-Type: application/json
+
+### 공고 상세 조회
+GET {{host}}/api/employment/
+Accept: application/json
+Content-Type: application/json

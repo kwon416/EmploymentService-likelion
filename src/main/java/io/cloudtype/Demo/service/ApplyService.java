@@ -4,13 +4,12 @@ import io.cloudtype.Demo.dto.apply.request.ApplyDto;
 import io.cloudtype.Demo.entity.Apply;
 import io.cloudtype.Demo.entity.Employment;
 import io.cloudtype.Demo.repository.ApplyRepository;
-import io.cloudtype.Demo.repository.EmploymentReopository;
+import io.cloudtype.Demo.repository.EmploymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,7 +17,7 @@ public class ApplyService {
     @Autowired
     private ApplyRepository applyRepository;
     @Autowired
-    EmploymentReopository employmentReopository;
+    EmploymentRepository employmentRepository;
 
     public List<ApplyDto> findAll() {
         return applyRepository.findAll().stream()
@@ -32,7 +31,7 @@ public class ApplyService {
     }
 
    public void saveApply(ApplyDto request) {
-       Employment employment = employmentReopository.findById(request.getEmployId()).orElseThrow(EntityNotFoundException::new);
+       Employment employment = employmentRepository.findById(request.getEmployId()).orElseThrow(EntityNotFoundException::new);
        System.out.println("in save apply service");
        System.out.println(employment);
        //생성
