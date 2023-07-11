@@ -15,6 +15,7 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequiredArgsConstructor
 @RequestMapping("/api/apply")
 @Tag(name = "Apply controller", description = "Apply api description")
